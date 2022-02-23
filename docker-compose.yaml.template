@@ -59,6 +59,8 @@ services:
       restart: unless-stopped
       image: ghcr.io/plebnet-playground/playground-tor:latest
       container_name: playground-tor-${tor_i}
+      environment:
+        TRIPLET: '${TRIPLET}'
       expose:
       - 9050
       - 9051
