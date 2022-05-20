@@ -11,12 +11,10 @@ $(which python3) plebnet_generate.py TRIPLET=$TRIPLET bitcoind=$bitcoind lnd=$ln
 
 #Remove
 docker-compose down
-sudo rm -rf volumes
-
 
 #Create Datafile
+mkdir -p volumes
 
-mkdir volumes
 for (( i=0; i<=$bitcoind-1; i++ ))
 do
     mkdir -p volumes/bitcoin_datadir_$i
