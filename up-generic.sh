@@ -1,7 +1,11 @@
+#This is for internal testing only
+if [ -z "$1" ]; then
+    $1=5
+fi
 : ${TRIPLET:=x86_64-linux-gnu}
-: ${bitcoind=5}
-: ${lnd=1}
-: ${tor=1}
+: ${bitcoind=$1}
+: ${lnd=$1}
+: ${tor=$1}
 
 $(which python3) plebnet_generate.py TRIPLET=$TRIPLET bitcoind=$bitcoind lnd=$lnd tor=$tor
 
