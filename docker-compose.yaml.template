@@ -10,7 +10,7 @@ services:
         - TRIPLET=${TRIPLET}
     links:
     - tor-${tor_i}
-    depends_on: 
+    depends_on:
     - tor-${tor_i}
     restart: unless-stopped
     container_name: playground-bitcoind-${bitcoind_i}
@@ -19,7 +19,7 @@ services:
     expose:
     - "38332"
     - "38333"
-    - "38334" 
+    - "38334"
     volumes:
       - type: bind
         source: ${oc.env:PWD}/volumes/bitcoin_datadir_${bitcoind_i}
